@@ -1,0 +1,13 @@
+name: Deploy to AWS Amplify
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy
+      run: |
+        URL="${{ secrets.WEBHOOK_URL }}"
+        curl -X POST -d {} "$URL" -H "Content-Type: application/json"
